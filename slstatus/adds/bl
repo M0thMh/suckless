@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$(bluetoothctl info)" != "Missing device address argument" ]; then
+	echo= bluetoothctl info | grep "Name" | awk '{print $2,$3}'
+else
+        echo 'No'
+fi
